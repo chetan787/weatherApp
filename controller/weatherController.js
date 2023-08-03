@@ -33,6 +33,6 @@ exports.getWeather  = async (req, res) => {
       return res.json({ message: 'Weather data created successfully', data: weatherData });
 
   } catch (error) {
-    return res.status(500).send({ error: 'Error fetching or updating weather data' });
+    return res.json({ error: 'Please give valid location' });
   }
 };
