@@ -20,10 +20,10 @@ document.getElementById("form").addEventListener("submit", function (event) {
         
         .then(data => {
             if (data.error) {
-                console.error("Error received:", data.error);
+                // console.error("Error received:", data.error);
                 updateWeatherOnPage(data);
             } else {
-                console.log("Received data for updating page:", data);
+                // console.log("Received data for updating page:", data);
                 updateWeatherOnPage(data);
             }
         })
@@ -36,7 +36,7 @@ document.getElementById("form").addEventListener("submit", function (event) {
 
 function updateWeatherOnPage(data) {
     if (data.error) {
-       console.log("error",data.error);
+    //    console.log("error",data.error);
         const errorMessage = data.error;
         const errorDiv = document.createElement("div");
         errorDiv.classList.add("error");
