@@ -52,14 +52,41 @@ function updateWeatherOnPage(data) {
         const name = data.data.name;
         const weather = document.createElement("div");
         weather.classList.add("weather");
+        // weather.innerHTML = `
+        // <h2>${name}</h2>
+        //     <h2>
+        //         <img src="https://openweathermap.org/img/wn/${data.data.weather[0].icon}.png" />
+                
+        //         ${temp}°C
+        //     </h2>
+        //     <small>${data.data.weather[0].main}</small>
+        //     <br>
+        //     <small>${data.data.weather[0].description}</small>
+        //     <small>${data.data.wind.speed}</small>
+
+
+        // `;
         weather.innerHTML = `
-        <h2>${name}</h2>
-            <h2>
-                <img src="https://openweathermap.org/img/wn/${data.data.weather[0].icon}.png" />
-                ${temp}°C
-            </h2>
-            <small>${data.data.weather[0].main}</small>
-        `;
+    <h2>${name}</h2>
+    <h2>
+        <img src="https://openweathermap.org/img/wn/${data.data.weather[0].icon}.png" />
+        ${temp}°C
+    </h2>
+    <small>${data.data.weather[0].main}</small>
+    <br>
+    <small>${data.data.weather[0].description}</small>
+    <br>
+    <small>Wind Speed: ${data.data.wind.speed} m/s</small>
+    <br>
+    <small>Wind Gust: ${data.data.wind.gust} m/s</small>
+    <br>
+    <small>Wind Direction: ${data.data.wind.deg}°</small>
+    <br>
+    <small>Humidity: ${data.data.main.humidity}%</small>
+    <br>
+    <small>Pressure: ${data.data.main.pressure} hPa</small>
+`;
+
         const main = document.getElementById("main");
         main.innerHTML = "";
         main.appendChild(weather);
